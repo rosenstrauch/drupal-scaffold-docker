@@ -57,8 +57,18 @@ phpcs: drupal_cs
               --extensions=php,module,inc,install,test,profile,theme \
               --report=full \
               --colors \
-              /var/www/{{__DOCROOT__}}/modules/custom \
-              /var/www/{{__DOCROOT__}}/themes/custom
+              --ignore=*.css \
+              --ignore=/var/www/html/modules/custom/wxt_library \
+              /var/www/html/modules/custom \
+              /var/www/html/profiles/{{__PROFILE__}}/modules/custom \
+              /var/www/html/themes/custom \
+
+	./docker/bin/phpcs --standard=/var/www/html/core/phpcs.xml \
+              --extensions=php,module,inc,install,test,profile,theme \
+              --report=full \
+              --colors \
+              -l \
+              /var/www/html/profiles/{{__PROFILE__}}
 
 phpunit:
 	./docker/bin/phpunit --colors=always \
