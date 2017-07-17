@@ -80,7 +80,7 @@ drupal_perm() {
   header Configure the settings.php and files directory permissions
 
   if [[ $NFS != "nfs" ]]; then
-    chown -R www-data:www-data /var/www/{{__DOCROOT__}}/
+    chown -R -f www-data:www-data /var/www/{{__DOCROOT__}}/
     sleep 5
   fi
 
