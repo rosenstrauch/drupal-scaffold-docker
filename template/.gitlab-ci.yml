@@ -1,3 +1,6 @@
+# to run this locally make sure you have docker installed.
+# gitlab-runner exec docker build_job --docker-volumes /var/run/docker.sock:/var/run/docker.sock
+
 stages:
   - build
   - package
